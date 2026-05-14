@@ -19,13 +19,14 @@ const fotos = [
     "before_met-gala2.jpg",
     "before_met-gala3.jpg",
     "before_met-gala4.jpg",
+    "camisa-flamengo-maracana.png",
 ];
 
 // 2. Função para carregar a galeria
 function carregarGaleria() {
     const container = document.getElementById('galeria-fotos');
     if (!container) return; // Segurança caso o ID mude
-    
+
     const caminhoBase = "./assets/photos/";
 
     const htmlFotos = fotos.map(foto => {
@@ -48,14 +49,14 @@ function abrirModal(src) {
     // Prepara a imagem e os links
     imagemAmpliada.src = src;
     linkDownload.href = src;
-    
+
     // Remove a classe fechando caso tenha ficado, e adiciona a de abrir
     modal.classList.remove("fechando");
     modal.classList.add("abrindo");
-    
+
     // Mostra o modal
-    modal.style.display = "flex"; 
-    
+    modal.style.display = "flex";
+
     // Reseta a opacidade dos botões (que podem ter sumido na última vez que fechou)
     document.querySelector('.fechar').style.opacity = '1';
     document.querySelector('.controles-modal').style.opacity = '1';
@@ -63,11 +64,11 @@ function abrirModal(src) {
 
 function fecharModal() {
     const modal = document.getElementById("meuModal");
-    
+
     // Troca a classe para acionar a animação de saída no CSS
     modal.classList.remove("abrindo");
     modal.classList.add("fechando");
-    
+
     // Espera os exatos 300ms da animação (0.3s definidos no CSS) antes de sumir com o modal
     setTimeout(() => {
         modal.style.display = "none";
@@ -77,7 +78,7 @@ function fecharModal() {
 }
 
 // Fechar ao clicar fora da imagem
-window.onclick = function(event) {
+window.onclick = function (event) {
     const modal = document.getElementById("meuModal");
     // Verifica se clicou diretamente no fundo escuro (modal) e não nos botões/imagem
     if (event.target === modal) {

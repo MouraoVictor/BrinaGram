@@ -20,6 +20,9 @@ const fotos = [
     "before_met-gala3.jpg",
     "before_met-gala4.jpg",
     "camisa-flamengo-maracana.png",
+    "camisa-flamengo-maracana-leonardoai.jpg",
+    "camisa-flamengo-maracana-rio-de-janeiro.jpg",
+
 ];
 
 // 2. Função para carregar a galeria

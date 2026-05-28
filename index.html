@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria de Fotos Brina</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="stylesheet" href="./style/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+
     <header>
         <h1>
-            <span>Galeria</span> 
+            <span>Galeria</span>
             <img src="./assets/logo.png" alt="Logo" class="logo-titulo">
             <span>Brina</span>
         </h1>
@@ -20,19 +24,25 @@
     <!-- Galeria de Fotos -->
     <!-- para adicionar novas fotos, ir ao index.js -->
     <div class="galeria" id="galeria-fotos"></div>
-    
+
     <div id="meuModal" class="modal">
-      <span class="fechar" onclick="fecharModal()">&times;</span>
-      <img class="modal-conteudo" id="imagemAmpliada" alt="Imagem ampliada">
-      
-      <div class="controles-modal">
-          <a id="linkDownload" href="" download="brina_foto.jpg" class="botao-download">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            Baixar Foto
-          </a>
-      </div>
+        <span class="fechar" onclick="fecharModal()">&times;</span>
+        <img class="modal-conteudo" id="imagemAmpliada" alt="Imagem ampliada">
+
+        <div class="controles-modal">
+            <a id="linkDownload" href="" download="brina_foto.jpg" class="botao-download">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Baixar Foto
+            </a>
+        </div>
     </div>
-    
+
     <script src="./script/index.js"></script>
 </body>
+
 </html>

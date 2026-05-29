@@ -22,7 +22,7 @@ const fotos = [
     "camisa-flamengo-maracana.png",
     "camisa-flamengo-maracana-leonardoai.jpg",
     "camisa-flamengo-maracana-rio-de-janeiro.jpg",
-
+    "sabrina_camisa_ferrari.png",
 ];
 
 // 2. Função para carregar a galeria

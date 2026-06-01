@@ -23,6 +23,16 @@ const fotos = [
     "camisa-flamengo-maracana-leonardoai.jpg",
     "camisa-flamengo-maracana-rio-de-janeiro.jpg",
     "sabrina_camisa_ferrari.png",
+    "brasil-agua-de-coco.jpg",
+    "going-upstairs-1.jpg",
+    "going-upstairs-2.jpg",
+    "going-upstairs-3.jpg",
+    "met-gala-dress-close.jpg",
+    "met-gala-front.jpg",
+    "met-gala-looking-down.jpg",
+    "met-gala-looking-right.jpg",
+    "met-gala-side-2.jpg",
+    "met-gala-side.jpg",
 ];
 
 // 2. Função para carregar a galeria

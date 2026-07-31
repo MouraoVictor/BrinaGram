@@ -33,6 +33,19 @@ const fotos = [
     "met-gala-looking-right.jpg",
     "met-gala-side-2.jpg",
     "met-gala-side.jpg",
+    "brina_&_madonna-1.jpg",
+    "brina_&_madonna-2.jpg",
+    "camiseta_brasil.jpg",
+    "deitada_p&b.jpg",
+    "ferrari_wpp_celular.jpg",
+    "fla_debochada.jpg",
+    "fundo SC black edition.jpg",
+    "fundo_yt_music.jpg",
+    "mans_best_friend_alt.jpg",
+    "terno_no_carro.jpg",
+    "toalha_flamengo.jpg",
+    "vestido_dourado.jpg",
+    "xoxo.jpg",
 ];
 
 // 2. Função para carregar a galeria
@@ -40,28 +53,39 @@ function carregarGaleria() {
     const container = document.getElementById('galeria-fotos');
     if (!container) return; // Segurança caso o ID mude
 
-    const caminhoBase = "./assets/photos/";
+    const caminhoThumbnails = "./assets/thumbnails/"; // <-- Caminho das fotos LEVES
 
     const htmlFotos = fotos.map(foto => {
+        // Agora passamos o NOME do arquivo ('${foto}') para a função, em vez do caminho inteiro
         return `<img 
-                    src="${caminhoBase}${foto}" 
-                    alt="Photo" 
+                    src="${caminhoThumbnails}${foto}" 
+                    alt="Foto da Brina" 
                     class="foto-miniatura" 
-                    onclick="abrirModal(this.src)">`;
+                    loading="lazy" 
+                    decoding="async"
+                    onclick="abrirModal('${foto}')">`;
     }).join('');
 
     container.innerHTML = htmlFotos;
 }
 
 // 3. Funções do Modal
-function abrirModal(src) {
+function abrirModal(nomeArquivo) {
     const modal = document.getElementById("meuModal");
     const imagemAmpliada = document.getElementById("imagemAmpliada");
     const linkDownload = document.getElementById("linkDownload");
 
-    // Prepara a imagem e os links
-    imagemAmpliada.src = src;
-    linkDownload.href = src;
+    const caminhoAltaRes = "./assets/photos/"; // <-- Caminho das fotos PESADAS
+
+    // Monta o link da imagem original juntando a pasta de alta resolução com o nome do arquivo
+    const linkFotoOriginal = caminhoAltaRes + nomeArquivo;
+
+    // Coloca uma imagem de "carregando" temporária para evitar mostrar a foto anterior enquanto baixa a nova
+    imagemAmpliada.src = "";
+
+    // Prepara a imagem e os links com a foto em alta qualidade
+    imagemAmpliada.src = linkFotoOriginal;
+    linkDownload.href = linkFotoOriginal;
 
     // Remove a classe fechando caso tenha ficado, e adiciona a de abrir
     modal.classList.remove("fechando");
@@ -70,7 +94,7 @@ function abrirModal(src) {
     // Mostra o modal
     modal.style.display = "flex";
 
-    // Reseta a opacidade dos botões (que podem ter sumido na última vez que fechou)
+    // Reseta a opacidade dos botões
     document.querySelector('.fechar').style.opacity = '1';
     document.querySelector('.controles-modal').style.opacity = '1';
 }
